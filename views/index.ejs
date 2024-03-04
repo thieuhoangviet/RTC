@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo phòng họp</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="text-center mb-4">Tạo phòng họp</h1>
+                <div class="card">
+                    <div class="card-body">
+                        <button class="btn btn-primary btn-block" id="createRoomBtn"><a href="/room">
+                                Tạo Phòng Họp</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById("createRoomBtn").addEventListener("click", function () {
+            var roomName = document.getElementById("roomName").value;
+            if (roomName.trim() !== "") {
+                // Redirect to the room creation page with the room name
+                window.location.href = "/create-room?name=" + encodeURIComponent(roomName);
+            }
+        });
+    </script>
+</body>
+
+</html>
